@@ -61,6 +61,7 @@ public class TokenAuthenticator implements Authenticator {
         Request request = new Request.Builder()
                 .url(Constants.BASE_URL + "/oauth/token")
                 .post(requestBody)
+                .addHeader("Accept", "application/json;")
                 .addHeader("Authorization", "Bearer " + uspm.getCurrentUser().getAccessToken())
                 .build();
 
